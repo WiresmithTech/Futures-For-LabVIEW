@@ -11,8 +11,12 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="Tests" Type="Folder">
+			<Item Name="Futures Tests.lvclass" Type="LVClass" URL="../Tests/Futures Tests/Futures Tests.lvclass"/>
+			<Item Name="Result Tests.lvclass" Type="LVClass" URL="../Tests/Result Tests/Result Tests.lvclass"/>
+		</Item>
 		<Item Name="Futures.lvlib" Type="Library" URL="../Futures/Futures.lvlib"/>
-		<Item Name="Result Tests.lvclass" Type="LVClass" URL="../Tests/Result Tests/Result Tests.lvclass"/>
+		<Item Name="Wait On All Future Tests.lvclass" Type="LVClass" URL="../Tests/Wait On All Future Tests/Wait On All Future Tests.lvclass"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Array Size(s)__ogtk__jki_vi_tester.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/VI Tester/_support/Support.llb/Array Size(s)__ogtk__jki_vi_tester.vi"/>
