@@ -13,18 +13,18 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Examples" Type="Folder">
 			<Item Name="SubVIs" Type="Folder">
+				<Item Name="Asynchronous Random Number Generator.vi" Type="VI" URL="../Examples/SubVIs/Asynchronous Random Number Generator.vi"/>
 				<Item Name="Command Queue Data.ctl" Type="VI" URL="../Examples/SubVIs/Command Queue Data.ctl"/>
+				<Item Name="Make Request.vi" Type="VI" URL="../Examples/SubVIs/Make Request.vi"/>
 			</Item>
 			<Item Name="Asynchronous QMH with Futures - Performance Comparison.vi" Type="VI" URL="../Examples/Asynchronous QMH with Futures - Performance Comparison.vi"/>
+			<Item Name="Basic Usage.vi" Type="VI" URL="../Examples/Basic Usage.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="Futures Tests.lvclass" Type="LVClass" URL="../Tests/Futures Tests/Futures Tests.lvclass"/>
 			<Item Name="Result Tests.lvclass" Type="LVClass" URL="../Tests/Result Tests/Result Tests.lvclass"/>
 		</Item>
-		<Item Name="Asynchronous Random Number Generator.vi" Type="VI" URL="../Examples/SubVIs/Asynchronous Random Number Generator.vi"/>
-		<Item Name="Basic Usage.vi" Type="VI" URL="../Examples/Basic Usage.vi"/>
 		<Item Name="Futures.lvlib" Type="Library" URL="../Futures/Futures.lvlib"/>
-		<Item Name="Make Request.vi" Type="VI" URL="../Examples/SubVIs/Make Request.vi"/>
 		<Item Name="Wait On All Future Tests.lvclass" Type="LVClass" URL="../Tests/Wait On All Future Tests/Wait On All Future Tests.lvclass"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">

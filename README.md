@@ -19,11 +19,13 @@ TBD
 
 ## :computer: Development Requirements
 
-This code is build in LabVIEW 2017.
+This code is built in LabVIEW 2017 with no other dependencies.
+
+VI tester is used for testing the API.
 
 ## :busts_in_silhouette: Contributing 
 
-N/A
+TBD
 
 ##  :beers: Credits
 
