@@ -21,6 +21,8 @@
 			<Item Name="Futures Tests.lvclass" Type="LVClass" URL="../Tests/Futures Tests/Futures Tests.lvclass"/>
 			<Item Name="Result Tests.lvclass" Type="LVClass" URL="../Tests/Result Tests/Result Tests.lvclass"/>
 		</Item>
+		<Item Name="Asynchronous Random Number Generator.vi" Type="VI" URL="../Examples/SubVIs/Asynchronous Random Number Generator.vi"/>
+		<Item Name="Basic Usage.vi" Type="VI" URL="../Examples/Basic Usage.vi"/>
 		<Item Name="Futures.lvlib" Type="Library" URL="../Futures/Futures.lvlib"/>
 		<Item Name="Make Request.vi" Type="VI" URL="../Examples/SubVIs/Make Request.vi"/>
 		<Item Name="Wait On All Future Tests.lvclass" Type="LVClass" URL="../Tests/Wait On All Future Tests/Wait On All Future Tests.lvclass"/>
