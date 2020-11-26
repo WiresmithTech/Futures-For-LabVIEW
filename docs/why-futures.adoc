@@ -1,0 +1,61 @@
+Why Futures
+===========
+James McNally <james@wiresmithtech.com>
+
+ifdef::env-github[]
+:imagesdir: https://github.com/WiresmithTech/Futures-For-LabVIEW/tree/main/docs/images
+endif::[]
+ifndef::env-github[]
+:imagesdir: images
+endif::[]
+
+== Asynchronous Programming
+
+In many languages we are seeing an explosion in adoption of asynchronous programming.
+
+Although driven by different factors, we have seen a similar trend in LabVIEW over the past 10 years.
+The adoption of architectures which use parallel loops communicating through queues has promoted seperation of concerns and team development but increased the complexity of the systems.
+
+One thing that we can learn from other languages is the potential power of promises and/or futures.
+
+== Promises and Futures
+
+To some degree promises and futures are synonyms which are a placeholder for a value that will be produced at an unknown time in the future.
+Some languages use both terms, others use just one.
+
+I like the seperation of using two:
+
+* The asynchronous callee has a promise to fulfil.
+* The asynchronous caller has a future value that will be resolved at an unknown time.
+
+The promise can be fulfilled with a result value, or an error.
+
+What does this look like:
+
+.Basic Example
+image::simple_example.png[Simple Example]
+
+Where there are real gains is if there are multiple requests needed.
+
+.Mutiple Calls (Synchronous vs Asynchronous)
+image::multiple_calls.png[Multiple Calls]
+
+Notice in the synchronous version we have two wait periods, one for each call.
+
+With futures we stack up the calls so the waits on the asynchronous processes occur at the same time, reducing the overall execution time.
+
+== Current Solutions in LabVIEW
+
+Currently I see two ways that this gets solved in LabVIEW:
+
+Return Messages:: In this case both the caller and the callee can recieve messages and the caller sends a message back once the operation is completed. 
+This can work very well and is the basis of many frameworks. However this might require some additional state management if the caller is in a strange state before getting the response.
+
+Notifiers On Completion:: In some cases a notifier is used to wait on the response. Either baked into the framework call or free to pass around. This is 80% of a futures API and anything we build will be an evolution of this approach.
+
+== What I'm Proposing
+
+1. We start using the language of futures or promises when discussing this approach to getting asynchronous responses. 
+A common language will help identify patterns we can use from each other and other languages.
+
+2. In this repository is my idea of what this API looks like. I put it forward as an option for a implementation that solves the problems described above.
