@@ -3,7 +3,7 @@ Why Futures
 James McNally <james@wiresmithtech.com>
 
 ifdef::env-github[]
-:imagesdir: https://github.com/WiresmithTech/Futures-For-LabVIEW/tree/main/docs/images
+:imagesdir: https://github.com/WiresmithTech/Futures-For-LabVIEW/raw/main/docs/images
 endif::[]
 ifndef::env-github[]
 :imagesdir: images
