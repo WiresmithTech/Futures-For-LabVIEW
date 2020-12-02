@@ -1,0 +1,21 @@
+Futures Design Details
+======================
+
+== Terminology
+
+Task:: The term for the asynchronous process with a start and end.
+Promise:: The API for a task executor to return results and errors.
+Future:: The API for a task requestor to recieve results.
+Resolved:: The task has been completed with a result or an error.
+Cancelled:: The task requestor is no longer interested in a result. 
+
+
+== Lifetimes
+
+The object with a lifetime is the result object which is shared between the future and the promise.
+
+The future is the sole arbiter of the lifetime of the result. It is cleaned up if the future is destroyed, cancelled or read successfully.
+
+The promise has no control over the lifetime. If the result is destroyed, then the promise will be treated as cancelled with a warning.
+
+In the case of a read timeout - the future user must explicitly clean up the future.

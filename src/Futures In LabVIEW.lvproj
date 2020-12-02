@@ -23,7 +23,7 @@
 		<Item Name="Tests" Type="Folder">
 			<Item Name="Cancellation Tests.lvclass" Type="LVClass" URL="../Tests/Cancellation Tests/Cancellation Tests.lvclass"/>
 			<Item Name="Futures Tests.lvclass" Type="LVClass" URL="../Tests/Futures Tests/Futures Tests.lvclass"/>
-			<Item Name="Result Tests.lvclass" Type="LVClass" URL="../Tests/Result Tests/Result Tests.lvclass"/>
+			<Item Name="Task Tests.lvclass" Type="LVClass" URL="../Tests/Task Tests/Task Tests.lvclass"/>
 			<Item Name="Wait On All Future Tests.lvclass" Type="LVClass" URL="../Tests/Wait On All Future Tests/Wait On All Future Tests.lvclass"/>
 		</Item>
 		<Item Name="Futures.lvlib" Type="Library" URL="../Futures/Futures.lvlib"/>
