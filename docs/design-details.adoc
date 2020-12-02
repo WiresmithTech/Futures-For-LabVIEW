@@ -19,3 +19,7 @@ The future is the sole arbiter of the lifetime of the result. It is cleaned up i
 The promise has no control over the lifetime. If the result is destroyed, then the promise will be treated as cancelled with a warning.
 
 In the case of a read timeout - the future user must explicitly clean up the future.
+
+== Custom Errors
+
+609000 - This task has been completed or cancelled. It is no longer valid.
