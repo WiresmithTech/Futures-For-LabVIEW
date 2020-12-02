@@ -1,0 +1,26 @@
+@startuml
+== Synchronous ==
+Test -> DMM: Measure Power Draw
+Activate DMM
+... DMM Read Time ...
+DMM -> Test: Power Draw
+Deactivate DMM
+Test -> UUT: Return State
+Activate UUT
+... UUT Read Time ...
+UUT -> Test: State
+Deactivate UUT
+
+== Asynchronous ==
+
+Test -> DMM: Measure Power Draw
+Activate DMM
+DMM -> Test: Future
+Test -> UUT: Return State
+Activate UUT
+... Single Wait ...
+DMM -> Test: Resolve Future (Power Draw)
+Deactivate DMM
+UUT -> Test: Resolve Future (State)
+Deactivate UUT
+@enduml

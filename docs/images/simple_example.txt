@@ -1,0 +1,12 @@
+@startuml
+Alice -> Bob: Do Something Asynchronously
+Activate Bob
+Bob --> Alice: Sure, Heres a Future
+Bob -> Bob: Do some work.
+Note over Alice
+This might poll for a result
+or be event-based.
+end Note
+Bob -> Alice: Here is the result or error.
+Deactivate Bob
+@enduml
