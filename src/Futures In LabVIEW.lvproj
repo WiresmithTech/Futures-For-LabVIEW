@@ -18,7 +18,9 @@
 				<Item Name="Make Request.vi" Type="VI" URL="../Examples/SubVIs/Make Request.vi"/>
 			</Item>
 			<Item Name="Asynchronous QMH with Futures - Performance Comparison.vi" Type="VI" URL="../Examples/Asynchronous QMH with Futures - Performance Comparison.vi"/>
-			<Item Name="Basic Usage.vi" Type="VI" URL="../Examples/Basic Usage.vi"/>
+			<Item Name="Future Usage - Cancel Long Operation.vi" Type="VI" URL="../Examples/Future Usage - Cancel Long Operation.vi"/>
+			<Item Name="Future Usage - Timeouts.vi" Type="VI" URL="../Examples/Future Usage - Timeouts.vi"/>
+			<Item Name="Future Usage With Successful Result.vi" Type="VI" URL="../Examples/Future Usage With Successful Result.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="Cancellation Tests.lvclass" Type="LVClass" URL="../Tests/Cancellation Tests/Cancellation Tests.lvclass"/>
