@@ -1,0 +1,73 @@
+Futures in LabVIEW User Guide
+===========
+James McNally <james@wiresmithtech.com>
+
+ifdef::env-github[]
+:imagesdir: https://github.com/WiresmithTech/Futures-For-LabVIEW/raw/main/docs/images
+endif::[]
+ifndef::env-github[]
+:imagesdir: images
+endif::[]
+
+== Overview
+
+The futures library for LabVIEW provides a way of communicating the results of an asynchronous operation back to the requestor.
+
+It is designed to be a more intuitive method than handling return messages and more performant that using request/reply semantics.
+
+For more details on why - see https://github.com/WiresmithTech/Futures-For-LabVIEW/blob/main/docs/why-futures.adoc
+
+== Basic Concepts
+
+The futures library is used to support a *Task*.
+
+When you create a *Task* you get a *Promise* object to pass to the worker that will complete the task, and a *Future* object to pass to the requestor so they can wait for the task to be completed at an appropriate time.
+
+The worker can resolve a promise with a result if the task was successful, or an error if it was not. The requestor can efficiently wait on one or more futures which will provide these results for the tasks.
+
+If the requestor no longer requires the result, or it is taking too long to recieve a result - it can cancel the future. When a future is cancelled the worker can query this from it's promise object. Allowing it to terminate a long running action (if possible).
+
+== Examples
+
+These examples all ship with the library and can be found by browsing to the Futures folder in the example finder. (You must switch to Directory Structure mode first)
+
+These show the complete flow on a single diagram (that would normally be split across multiple loops)
+
+=== Basic Example
+
+.Example of Successful Call
+image::example-basic.png[Example of Successful Call]
+
+In this example we can see the happy path.
+
+You create the task and pass the promise and future to the correct locations. The requestor waits on the future, until the worker resolves the promise.
+
+=== Timeout Example
+
+.Example of Timeout Case
+image::example-timeout.png[Example of Timeout Case]
+
+Here we see a timeout. Generally the timeout should be set large enough that it is only seen if there is a critical issue in the worker.
+
+In this case, there is. The worker has errored in such a way it doesn't resolve the promise (Normally, even in an error case, you should resolve with error).
+
+The requestor gets a timeout error and has two choices.
+
+. As done here, you cancel the future. The task should not take this long so you assume something has gone wrong. I expect this to be the case 90% of the time.
+. Retry - you can attempt the wait again, but this is discouraged in regular use cases. The timeout should be high enough to allow most reasonable execution times to complete.
+
+=== Cancellation Example
+
+.Example of Cancellation
+image::example-cancellation.png[Example of Cancellation]
+
+Cancellation is not a common addition to futures APIs, however I feel it has merit in LabVIEW.
+
+The reason is that other languages use futures for very atomic operations, but I see the LabVIEW usage being more task oriented.
+
+For that reason, having a way to cancel a long running task is a huge benefit.
+
+In this case we have an iterative task for the worker, so each iteration they can check if the task should have been cancelled. 
+If so, it can break out of the loop early without waiting for the task to complete.
+Here we then use that as a decision to resolve the promise or not.
+This isn't too important, resolving a cancelled promise will just throw a warning.
