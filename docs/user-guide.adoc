@@ -1,5 +1,5 @@
 Futures in LabVIEW User Guide
-===============================
+=============================
 James McNally <james@wiresmithtech.com>
 
 ifdef::env-github[]
