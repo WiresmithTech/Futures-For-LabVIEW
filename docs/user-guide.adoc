@@ -27,6 +27,15 @@ The worker can resolve a promise with a result if the task was successful, or an
 
 If the requestor no longer requires the result, or it is taking too long to recieve a result - it can cancel the future. When a future is cancelled the worker can query this from it's promise object. Allowing it to terminate a long running action (if possible).
 
+== VIs
+
+The futures palette installs to the Data Communication subpalette.
+There you will find the VIs for creating a task and interacting with the future and promise that is returned.
+
+image::futures-palette.png[Futures Palette]
+
+There will be full API documentation at the bottom of this guide in a future update.
+
 == Examples
 
 These examples all ship with the library and can be found by browsing to the Futures folder in the example finder. (You must switch to Directory Structure mode first)
