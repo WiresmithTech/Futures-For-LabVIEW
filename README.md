@@ -11,11 +11,11 @@ This library contains an implementation of futures for variants which can be use
 
 ## :rocket: Installation
 
-Releases are distributed as  VI packages.
+Releases are distributed as  VI packages. These will be published on VIPM or made available on the releases page at https://github.com/WiresmithTech/Futures-For-LabVIEW/releases
 
 ## :sunglasses: Usage
 
-TBD
+See the user guide at https://github.com/WiresmithTech/Futures-For-LabVIEW/blob/main/docs/user-guide.adoc
 
 ## :computer: Development Requirements
 
